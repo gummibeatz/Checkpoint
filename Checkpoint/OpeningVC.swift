@@ -8,15 +8,24 @@
 
 import UIKit
 import CoreLocation
+import AssetsLibrary
 
-class OpeningVC: UIViewController, CLLocationManagerDelegate {
+class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var checkpointButton: UIButton! {
         didSet {
             checkpointButton.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
         }
-        
     }
+    
+    lazy var imagePicker: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        }
+        return imagePicker
+    }()
+    
     var locationManager: CLLocationManager!
     var location: CLLocation?
     
@@ -26,6 +35,7 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate {
         self.view = NSBundle.mainBundle().loadNibNamed("OpeningView", owner: self, options: nil).first as! UIView
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        imagePicker.delegate = self
         let authorizedStatuses:[CLAuthorizationStatus] = [.AuthorizedAlways, .AuthorizedWhenInUse]
         if !authorizedStatuses.contains(CLLocationManager.authorizationStatus()) {
             print("couldn't get authorization")
@@ -57,6 +67,11 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate {
                 return
             }
         }
+        self.openCamera()
+    }
+    
+    func openCamera() {
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     // MARK: - CoreLocation
@@ -69,13 +84,28 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate {
     
    // MARK: - CoreLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location:CLLocation = locations[locations.count-1] as CLLocation
+        let location:CLLocation? = locations.last as CLLocation?
         self.location = location
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         self.location = nil
         print("Can't get your location")
+    }
+    
+    // MARK: - ImagePickerDelegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("did finish picking media with info")
+        print("saving to photo library")
+        let image = info[UIImagePickerControllerOriginalImage]
+        let library = ALAssetsLibrary()
+        library.writeImageToSavedPhotosAlbum(image?.CGImage!, orientation: .Up, completionBlock: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+   
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("canceled taking pic")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

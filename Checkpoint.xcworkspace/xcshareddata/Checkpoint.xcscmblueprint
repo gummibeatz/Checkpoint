@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A4B466D121F7E9EF5BABD0B2EB244591588B5B77",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "14651705FB81BD97AEE1DA5B1DECF6CAD54A5F22" : 0,
+    "A4B466D121F7E9EF5BABD0B2EB244591588B5B77" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2B727BB5-3FE6-45FF-A3C0-ACD57003A0F9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "14651705FB81BD97AEE1DA5B1DECF6CAD54A5F22" : "..",
+    "A4B466D121F7E9EF5BABD0B2EB244591588B5B77" : "Checkpoint\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Checkpoint",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Checkpoint.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gummibeatz\/hackesscode-2015.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "14651705FB81BD97AEE1DA5B1DECF6CAD54A5F22"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gummibeatz\/Checkpoint.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4B466D121F7E9EF5BABD0B2EB244591588B5B77"
+    }
+  ]
+}

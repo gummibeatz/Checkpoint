@@ -22,8 +22,6 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Tme-QL-rb9" secondAttribute="height" multiplier="1:1" id="TgV-vJ-Con"/>
-                        <constraint firstAttribute="height" constant="100" id="osr-6Z-fMO"/>
-                        <constraint firstAttribute="width" constant="100" id="zXv-qH-SHj"/>
                     </constraints>
                     <state key="normal" title="Checkpoint!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,23 +29,23 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="TgV-vJ-Con"/>
-                            <exclude reference="osr-6Z-fMO"/>
-                            <exclude reference="zXv-qH-SHj"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
                         <mask key="constraints">
                             <include reference="TgV-vJ-Con"/>
-                            <exclude reference="osr-6Z-fMO"/>
-                            <exclude reference="zXv-qH-SHj"/>
                         </mask>
                     </variation>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Tme-QL-rb9" secondAttribute="trailing" constant="150" id="A8w-Jg-PHt"/>
-                <constraint firstItem="Tme-QL-rb9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="FCh-9k-bSn"/>
+                <constraint firstAttribute="trailing" secondItem="Tme-QL-rb9" secondAttribute="trailing" constant="150" id="A8w-Jg-PHt">
+                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                </constraint>
+                <constraint firstItem="Tme-QL-rb9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="FCh-9k-bSn">
+                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                </constraint>
                 <constraint firstItem="Tme-QL-rb9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="L9b-23-bNa"/>
                 <constraint firstItem="Tme-QL-rb9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Sa5-jd-RFT"/>
             </constraints>
