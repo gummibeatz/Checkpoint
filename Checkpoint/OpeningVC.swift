@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import AssetsLibrary
+import Photos
 
 class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -97,9 +98,13 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("did finish picking media with info")
         print("saving to photo library")
-        let image = info[UIImagePickerControllerOriginalImage]
-        let library = ALAssetsLibrary()
-        library.writeImageToSavedPhotosAlbum(image?.CGImage!, orientation: .Up, completionBlock: nil)
+        let image: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+            }, completionHandler: {
+                (success:Bool, error: NSError?) in
+                print("success = \(success)")
+            })
         self.dismissViewControllerAnimated(true, completion: nil)
     }
    
