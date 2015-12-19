@@ -67,10 +67,18 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
                 return
             }
         }
+        
+        //seetup up blureffect
+        let blurEffect = UIBlurEffect(style: .Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.frame
+        blurEffectView.alpha = 0
+        self.view.addSubview(blurEffectView)
         let checkpointFieldsView = NSBundle.mainBundle().loadNibNamed("CheckpointFieldsView", owner: self, options: nil).last as! CheckpointFieldsView
         checkpointFieldsView.frame = CGRect(x: 20, y: -SCREENHEIGHT, width: SCREENWIDTH-40, height: SCREENHEIGHT/3)
         self.view.addSubview(checkpointFieldsView)
         UIView.animateWithDuration(2.0, delay: 0, usingSpringWithDamping: 2.0, initialSpringVelocity: 1.0, options: .CurveEaseOut , animations: {
+            blurEffectView.alpha = 0.8
             checkpointFieldsView.center = self.view.center
             }, completion: {
                 success in
