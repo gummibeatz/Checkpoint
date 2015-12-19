@@ -40,10 +40,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Tme-QL-rb9" secondAttribute="trailing" constant="150" id="A8w-Jg-PHt">
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Tme-QL-rb9" secondAttribute="trailing" constant="150" id="A8w-Jg-PHt">
                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                 </constraint>
-                <constraint firstItem="Tme-QL-rb9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="FCh-9k-bSn">
+                <constraint firstItem="Tme-QL-rb9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="FCh-9k-bSn">
                     <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                 </constraint>
                 <constraint firstItem="Tme-QL-rb9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="L9b-23-bNa"/>

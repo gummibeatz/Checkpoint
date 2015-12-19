@@ -55,7 +55,6 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
             let alertVC = UIAlertController(title: "Uh oh, we can't get your location..." , message: "we won't be able to save a checkpoint without your location, but you can change it in your phone settings!", preferredStyle: .Alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alertVC, animated: true, completion: nil)
-            locationManager.requestWhenInUseAuthorization()
             return
         }
         print("lat = \(self.location!.coordinate.latitude), long = \(self.location!.coordinate.longitude)")
@@ -68,7 +67,15 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
                 return
             }
         }
-        self.openCamera()
+        let checkpointFieldsView = NSBundle.mainBundle().loadNibNamed("CheckpointFieldsView", owner: self, options: nil).last as! CheckpointFieldsView
+        checkpointFieldsView.frame = CGRect(x: 20, y: -SCREENHEIGHT, width: SCREENWIDTH-40, height: SCREENHEIGHT/3)
+        self.view.addSubview(checkpointFieldsView)
+        UIView.animateWithDuration(2.0, delay: 0, usingSpringWithDamping: 2.0, initialSpringVelocity: 1.0, options: .CurveEaseOut , animations: {
+            checkpointFieldsView.center = self.view.center
+            }, completion: {
+                success in
+                print(success)
+        })
     }
     
     func openCamera() {
