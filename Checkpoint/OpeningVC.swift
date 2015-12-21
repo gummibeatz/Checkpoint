@@ -11,7 +11,7 @@ import CoreLocation
 import AssetsLibrary
 import Photos
 
-class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CheckpointFieldsViewDelegate {
 
     @IBOutlet weak var checkpointButton: UIButton! {
         didSet {
@@ -29,6 +29,8 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
     
     var locationManager: CLLocationManager!
     var location: CLLocation?
+    var blurEffectView: UIVisualEffectView?
+    var checkpointFieldsView: CheckpointFieldsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,37 +60,51 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
             return
         }
         print("lat = \(self.location!.coordinate.latitude), long = \(self.location!.coordinate.longitude)")
+        
+        self.checkpointFieldsView = createCheckpointFieldsView()
+        self.blurEffectView = createBlurEffectView()
+        
         fetchAddressWithCoordinates(location!.coordinate) {
             (address: String?) in
             if address != nil {
                 print(address!)
+                self.checkpointFieldsView!.addressLabel!.text = address!
             }else {
                 print("address was nil")
                 return
             }
         }
         
-        //seetup up blureffect
+        self.view.addSubview(blurEffectView!)
+        self.view.addSubview(checkpointFieldsView!)
+        UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 5.0, initialSpringVelocity: 9.0, options: .CurveEaseOut , animations: {
+            self.blurEffectView!.alpha = 1.0
+            self.checkpointFieldsView!.center = self.view.center
+            }, completion: {
+                success in
+        })
+    }
+   // MARK: - Helper methods
+    
+    func createBlurEffectView() -> UIVisualEffectView {
         let blurEffect = UIBlurEffect(style: .Light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.frame
         blurEffectView.alpha = 0
-        self.view.addSubview(blurEffectView)
+        return blurEffectView
+    }
+    
+    func createCheckpointFieldsView() -> CheckpointFieldsView {
         let checkpointFieldsView = NSBundle.mainBundle().loadNibNamed("CheckpointFieldsView", owner: self, options: nil).last as! CheckpointFieldsView
         checkpointFieldsView.frame = CGRect(x: 20, y: -SCREENHEIGHT, width: SCREENWIDTH-40, height: SCREENHEIGHT/3)
-        self.view.addSubview(checkpointFieldsView)
-        UIView.animateWithDuration(2.0, delay: 0, usingSpringWithDamping: 2.0, initialSpringVelocity: 1.0, options: .CurveEaseOut , animations: {
-            blurEffectView.alpha = 0.8
-            checkpointFieldsView.center = self.view.center
-            }, completion: {
-                success in
-                print(success)
-        })
+        checkpointFieldsView.delegate = self
+        return checkpointFieldsView
     }
     
     func openCamera() {
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
+    
     
     // MARK: - CoreLocation
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -126,6 +142,22 @@ class OpeningVC: UIViewController, CLLocationManagerDelegate, UIImagePickerContr
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         print("canceled taking pic")
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - CheckpointFieldsViewDelegate
+    func checkpointSaved(success: Bool) {
+        if (success) {
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.blurEffectView!.alpha = 0
+                self.checkpointFieldsView!.transform = CGAffineTransformMakeScale(0.01, 0.01)
+                }, completion: {
+                    completionHandler in
+                    self.blurEffectView!.removeFromSuperview()
+                    self.checkpointFieldsView!.removeFromSuperview()
+            })
+        } else {
+            print("shit failed")
+        }
     }
 }
 

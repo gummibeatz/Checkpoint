@@ -9,14 +9,35 @@
 import Foundation
 import UIKit
 
-class CheckpointFieldsView: UIView {
+protocol CheckpointFieldsViewDelegate {
+    func checkpointSaved(success: Bool)
+}
+
+class CheckpointFieldsView: UIView, UITextFieldDelegate {
     
-    @IBOutlet weak var titleTextField: UITextField!
+    final let selected = true
+    
+    @IBOutlet weak var titleTextField: UITextField! {
+        didSet {
+            titleTextField.delegate = self
+        }
+    }
+    
     @IBOutlet weak var foodButton: UIButton!
     @IBOutlet weak var drinksButton: UIButton!
     @IBOutlet weak var scenicButton: UIButton!
     @IBOutlet weak var socialButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBAction func saveButtonTapped(sender: UIButton) {
+        print("save button tapped")
+        delegate?.checkpointSaved(true)
+    }
+    
+    var delegate: CheckpointFieldsViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,5 +52,32 @@ class CheckpointFieldsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        setupButtons()
+    }
+    
+    func setupButtons() {
+        let reasonButtons = [self.foodButton, self.drinksButton, self.scenicButton, self.socialButton, self.otherButton]
+        for button in reasonButtons {
+            styleButton(button)
+            button.addTarget(self, action: "setSelected:", forControlEvents: .TouchUpInside)
+        }
+    }
+    
+    func styleButton(button: UIButton) {
+        button.layer.cornerRadius = 5
+    }
+    
+    func setSelected(button: UIButton) {
+        button.selected = !button.selected
+    }
+    
+    // MARK - UITextFieldDelegate 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }

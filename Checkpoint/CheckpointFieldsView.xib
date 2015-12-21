@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,56 +18,103 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyy-ka-atm">
-                    <rect key="frame" x="232" y="65" width="56.5" height="20.5"/>
+                    <rect key="frame" x="232" y="90" width="56.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzM-4p-7R7">
-                    <rect key="frame" x="141" y="95.5" width="35" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzM-4p-7R7">
+                    <rect key="frame" x="109" y="120" width="54" height="30"/>
                     <state key="normal" title="Food"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei4-Ub-cJX">
-                    <rect key="frame" x="185" y="95.5" width="44" height="30"/>
+                    <rect key="frame" x="163" y="120" width="59" height="30"/>
                     <state key="normal" title="Drinks"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-y6-0kd">
-                    <rect key="frame" x="237" y="95.5" width="46" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pt-xx-uJm">
+                    <rect key="frame" x="0.0" y="50" width="520" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68T-uB-F0S">
+                    <rect key="frame" x="20" y="288" width="480" height="44"/>
+                    <color key="backgroundColor" red="0.3803921569" green="0.62745098040000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="68T-uB-F0S" secondAttribute="height" multiplier="49:30" id="3E2-dq-amj"/>
+                        <constraint firstAttribute="width" secondItem="68T-uB-F0S" secondAttribute="height" multiplier="120:11" id="sAq-Cp-ieo"/>
+                    </constraints>
+                    <color key="tintColor" red="0.3803921569" green="0.62745098040000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Save!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3E2-dq-amj"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="saveButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="rMD-s7-Z0e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-y6-0kd">
+                    <rect key="frame" x="219" y="120" width="64" height="30"/>
                     <state key="normal" title="Scenic"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ES-1x-hmq">
-                    <rect key="frame" x="298" y="95.5" width="42" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ES-1x-hmq">
+                    <rect key="frame" x="284" y="120" width="56" height="30"/>
                     <state key="normal" title="Social"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sk-30-fhZ">
-                    <rect key="frame" x="355" y="95.5" width="40" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sk-30-fhZ">
+                    <rect key="frame" x="348" y="120" width="47" height="30"/>
                     <state key="normal" title="Other"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Ei4-Ub-cJX" firstAttribute="leading" secondItem="DzM-4p-7R7" secondAttribute="trailing" constant="15" id="3pm-yW-fcd"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="top" secondItem="L8E-y6-0kd" secondAttribute="bottom" constant="15" id="6Yx-EO-LLr"/>
                 <constraint firstItem="G1d-XP-wtk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="6ic-mE-sgM"/>
                 <constraint firstItem="G1d-XP-wtk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7yd-7Z-QJ9"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="top" secondItem="G1d-XP-wtk" secondAttribute="bottom" constant="10" id="BXm-HP-7bx"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DH6-8C-C1a"/>
+                <constraint firstAttribute="trailing" secondItem="3Pt-xx-uJm" secondAttribute="trailing" id="EFL-tw-eGa"/>
                 <constraint firstItem="L8E-y6-0kd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FqE-E8-1nt"/>
+                <constraint firstItem="68T-uB-F0S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="IMo-ZU-Sp7"/>
                 <constraint firstItem="9ES-1x-hmq" firstAttribute="leading" secondItem="L8E-y6-0kd" secondAttribute="trailing" constant="15" id="JWe-80-ufd"/>
                 <constraint firstItem="DzM-4p-7R7" firstAttribute="baseline" secondItem="Ei4-Ub-cJX" secondAttribute="baseline" id="R9o-0d-2ev"/>
                 <constraint firstItem="Eyy-ka-atm" firstAttribute="top" secondItem="G1d-XP-wtk" secondAttribute="bottom" constant="25" id="RdO-7j-b9B"/>
                 <constraint firstItem="L8E-y6-0kd" firstAttribute="baseline" secondItem="9ES-1x-hmq" secondAttribute="baseline" id="Tsn-hf-8ql"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xz3-3Y-BZM"/>
+                <constraint firstItem="Eyy-ka-atm" firstAttribute="top" secondItem="3Pt-xx-uJm" secondAttribute="bottom" constant="20" id="aPs-f1-cdl"/>
                 <constraint firstItem="3Sk-30-fhZ" firstAttribute="leading" secondItem="9ES-1x-hmq" secondAttribute="trailing" constant="15" id="cSh-Nn-pDd"/>
                 <constraint firstItem="L8E-y6-0kd" firstAttribute="leading" secondItem="Ei4-Ub-cJX" secondAttribute="trailing" constant="15" id="gG0-JJ-lYL"/>
                 <constraint firstItem="Ei4-Ub-cJX" firstAttribute="top" secondItem="Eyy-ka-atm" secondAttribute="bottom" constant="10" id="gmC-JL-JGv"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gtG-4c-qzR"/>
+                <constraint firstAttribute="trailing" secondItem="68T-uB-F0S" secondAttribute="trailing" constant="20" id="i1b-Bb-iJ3"/>
+                <constraint firstItem="3Pt-xx-uJm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jfu-c7-6TD"/>
                 <constraint firstItem="Eyy-ka-atm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oLG-Yf-6Ex"/>
                 <constraint firstAttribute="trailing" secondItem="G1d-XP-wtk" secondAttribute="trailing" constant="30" id="r6F-lh-BeU"/>
                 <constraint firstItem="G1d-XP-wtk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="t55-jP-T9C"/>
+                <constraint firstAttribute="bottom" secondItem="68T-uB-F0S" secondAttribute="bottom" constant="10" id="uPS-72-8yN"/>
                 <constraint firstItem="3Sk-30-fhZ" firstAttribute="baseline" secondItem="9ES-1x-hmq" secondAttribute="baseline" id="weU-J9-rVv"/>
                 <constraint firstItem="Ei4-Ub-cJX" firstAttribute="baseline" secondItem="L8E-y6-0kd" secondAttribute="baseline" id="whb-y6-XEn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="6Yx-EO-LLr"/>
+                    <exclude reference="DH6-8C-C1a"/>
+                    <exclude reference="jfu-c7-6TD"/>
+                    <exclude reference="RdO-7j-b9B"/>
+                </mask>
+            </variation>
             <connections>
+                <outlet property="addressLabel" destination="3Pt-xx-uJm" id="WaV-5Y-1l2"/>
                 <outlet property="drinksButton" destination="Ei4-Ub-cJX" id="eEa-In-TE7"/>
                 <outlet property="foodButton" destination="DzM-4p-7R7" id="T2h-d0-mGK"/>
                 <outlet property="otherButton" destination="3Sk-30-fhZ" id="XOS-x4-fTv"/>
+                <outlet property="saveButton" destination="68T-uB-F0S" id="eMg-JI-VB8"/>
                 <outlet property="scenicButton" destination="L8E-y6-0kd" id="uEW-HI-dJU"/>
                 <outlet property="socialButton" destination="9ES-1x-hmq" id="oPj-97-7rH"/>
                 <outlet property="titleTextField" destination="G1d-XP-wtk" id="C86-df-PT8"/>
