@@ -18,10 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let openingVC = OpeningVC()
+//        let openingVC = OpeningVC()
         window = UIWindow()
         window!.makeKeyAndVisible()
-        window!.rootViewController = openingVC
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        window?.rootViewController = storyboard.instantiateInitialViewController()
+//        window!.rootViewController = openingVC
         
         //corelocation
         return true

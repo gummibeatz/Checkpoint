@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SavingView" customModule="Checkpoint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="437" height="297"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-I6-ace">
+                    <rect key="frame" x="212" y="0.0" width="13" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9Cc-I6-ace" secondAttribute="height" multiplier="43:59" id="g0x-5n-yQe"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="7x3-zm-hcE">
+                    <rect key="frame" x="198" y="259.5" width="40" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="9Jr-8W-scn"/>
+                        <constraint firstAttribute="width" secondItem="7x3-zm-hcE" secondAttribute="height" multiplier="108:100" id="VQs-OD-usM"/>
+                    </constraints>
+                </imageView>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqi-pp-AYT">
+                    <rect key="frame" x="206" y="16" width="1" height="243.5"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="awE-VD-Ti9"/>
+                    </constraints>
+                </view>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4d-gp-7Vt">
+                    <rect key="frame" x="230" y="16" width="1" height="243.5"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="4oW-8G-RQA"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-lI-g5y">
+                    <rect key="frame" x="209" y="24" width="19" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z8w-lI-g5y" secondAttribute="height" multiplier="28:15" id="xFd-KF-Jtb"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7x3-zm-hcE" firstAttribute="top" secondItem="M4d-gp-7Vt" secondAttribute="bottom" id="5Wm-SL-dKl"/>
+                <constraint firstItem="9Cc-I6-ace" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Ns-0K-NL5"/>
+                <constraint firstItem="z8w-lI-g5y" firstAttribute="leading" secondItem="iqi-pp-AYT" secondAttribute="trailing" constant="2" id="GLY-JA-NY3"/>
+                <constraint firstItem="M4d-gp-7Vt" firstAttribute="leading" secondItem="9Cc-I6-ace" secondAttribute="trailing" constant="5" id="Hqy-8T-HFc"/>
+                <constraint firstItem="9Cc-I6-ace" firstAttribute="height" secondItem="7x3-zm-hcE" secondAttribute="height" multiplier="1:2" id="Mvk-5d-DUd"/>
+                <constraint firstAttribute="bottom" secondItem="7x3-zm-hcE" secondAttribute="bottom" id="POC-aQ-lhF"/>
+                <constraint firstItem="z8w-lI-g5y" firstAttribute="top" secondItem="9Cc-I6-ace" secondAttribute="bottom" constant="5" id="Pmw-aN-e4A"/>
+                <constraint firstItem="7x3-zm-hcE" firstAttribute="top" secondItem="iqi-pp-AYT" secondAttribute="bottom" id="R80-Ox-aGx"/>
+                <constraint firstItem="9Cc-I6-ace" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fu3-Jg-S2a"/>
+                <constraint firstItem="M4d-gp-7Vt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="gzg-ms-t0P"/>
+                <constraint firstItem="7x3-zm-hcE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hOK-mB-r58"/>
+                <constraint firstAttribute="trailing" secondItem="iqi-pp-AYT" secondAttribute="trailing" id="q6z-Xs-ycZ"/>
+                <constraint firstItem="iqi-pp-AYT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qY9-fr-B3d"/>
+                <constraint firstItem="9Cc-I6-ace" firstAttribute="leading" secondItem="iqi-pp-AYT" secondAttribute="trailing" constant="5" id="ty7-RE-XB1"/>
+                <constraint firstItem="M4d-gp-7Vt" firstAttribute="leading" secondItem="z8w-lI-g5y" secondAttribute="trailing" constant="2" id="wNf-MY-VPg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="q6z-Xs-ycZ"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="arrowImage" destination="z8w-lI-g5y" id="KGg-f1-G98"/>
+                <outlet property="rightBar" destination="M4d-gp-7Vt" id="bsn-eU-5ca"/>
+            </connections>
+            <point key="canvasLocation" x="328.5" y="94.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Arrow" width="584" height="310"/>
+        <image name="Earth" width="692" height="600"/>
+        <image name="Pin" width="346" height="513"/>
+    </resources>
+</document>
