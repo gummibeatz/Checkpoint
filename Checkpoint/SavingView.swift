@@ -9,13 +9,29 @@
 import UIKit
 
 class SavingView: UIView {
+    
+    @IBOutlet var view: UIView!
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var rightBar: UIView!
     
     let animationDuration = 2.0
-
+    var isReplaced: Bool
+    
     required init?(coder aDecoder: NSCoder) {
+        isReplaced = false
         super.init(coder: aDecoder)
+    }
+    
+    override func awakeAfterUsingCoder(aDecoder: NSCoder) -> AnyObject? {
+        if(!isReplaced) {
+            isReplaced = true
+            let view = NSBundle.mainBundle().loadNibNamed("SavingView", owner: self, options: nil).first as! UIView
+            view.frame = self.frame
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }
+        isReplaced = false
+        return self
     }
     
     override func didMoveToWindow() {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5849263F901ECC70315106C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF94925E0D490549AB3162B /* Pods.framework */; };
 		CC0D96221C4077370046621E /* CheckpointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D96211C4077370046621E /* CheckpointViewController.swift */; };
+		CC0D96251C40B0AA0046621E /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D96241C40B0AA0046621E /* Checkpoint.swift */; };
+		CC0D96271C40B2510046621E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D96261C40B2510046621E /* LocationManager.swift */; };
 		CC261DFA1C1F972800D22FA8 /* GoogleAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC261DF91C1F972800D22FA8 /* GoogleAPICalls.swift */; };
 		CCA4D8C51C3F132400110DB1 /* SavingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA4D8C41C3F132400110DB1 /* SavingView.xib */; };
 		CCA4D8C71C3F133800110DB1 /* SavingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA4D8C61C3F133800110DB1 /* SavingView.swift */; };
@@ -20,8 +22,6 @@
 		CCD0BB8D1C1F814A000730F1 /* CheckpointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0BB8C1C1F814A000730F1 /* CheckpointUITests.swift */; };
 		CCD0BBA11C1F8773000730F1 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0BBA01C1F8773000730F1 /* GlobalConstants.swift */; };
 		CCD617C31C3EB4DE00EE7ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD617C21C3EB4DE00EE7ADC /* Main.storyboard */; };
-		CCD617C51C3EBD3000EE7ADC /* CreateCheckpointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD617C41C3EBD3000EE7ADC /* CreateCheckpointTableViewCell.swift */; };
-		CCD617C81C3EBDB400EE7ADC /* CheckpointTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD617C71C3EBDB400EE7ADC /* CheckpointTableViewController.swift */; };
 		CCD617CA1C3EC49D00EE7ADC /* CheckpointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD617C91C3EC49D00EE7ADC /* CheckpointTableViewCell.swift */; };
 		CCD617CD1C3EC6D200EE7ADC /* CheckpointColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD617CC1C3EC6D200EE7ADC /* CheckpointColors.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +46,8 @@
 /* Begin PBXFileReference section */
 		6AD92409C1D366E8BCCBA4A5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0D96211C4077370046621E /* CheckpointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckpointViewController.swift; sourceTree = "<group>"; };
+		CC0D96241C40B0AA0046621E /* Checkpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
+		CC0D96261C40B2510046621E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CC261DF91C1F972800D22FA8 /* GoogleAPICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAPICalls.swift; sourceTree = "<group>"; };
 		CCA4D8C41C3F132400110DB1 /* SavingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavingView.xib; sourceTree = "<group>"; };
 		CCA4D8C61C3F133800110DB1 /* SavingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingView.swift; sourceTree = "<group>"; };
@@ -63,8 +65,6 @@
 		CCD0BB8E1C1F814A000730F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCD0BBA01C1F8773000730F1 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		CCD617C21C3EB4DE00EE7ADC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		CCD617C41C3EBD3000EE7ADC /* CreateCheckpointTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCheckpointTableViewCell.swift; sourceTree = "<group>"; };
-		CCD617C71C3EBDB400EE7ADC /* CheckpointTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckpointTableViewController.swift; sourceTree = "<group>"; };
 		CCD617C91C3EC49D00EE7ADC /* CheckpointTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckpointTableViewCell.swift; sourceTree = "<group>"; };
 		CCD617CC1C3EC6D200EE7ADC /* CheckpointColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckpointColors.swift; sourceTree = "<group>"; };
 		DA00FA094CC24188D0E16C06 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +105,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC0D96231C40B0940046621E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC0D96241C40B0AA0046621E /* Checkpoint.swift */,
+				CC0D96261C40B2510046621E /* LocationManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CCD0BB5D1C1F814A000730F1 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +141,7 @@
 			children = (
 				CCD0BB691C1F814A000730F1 /* AppDelegate.swift */,
 				CCD617CB1C3EC69F00EE7ADC /* Helpers */,
+				CC0D96231C40B0940046621E /* Model */,
 				CCD0BB9D1C1F822F000730F1 /* Views */,
 				CCD0BB9C1C1F8227000730F1 /* Controllers */,
 				CCD617C61C3EBD5200EE7ADC /* UI */,
@@ -164,7 +174,6 @@
 		CCD0BB9C1C1F8227000730F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCD617C71C3EBDB400EE7ADC /* CheckpointTableViewController.swift */,
 				CC0D96211C4077370046621E /* CheckpointViewController.swift */,
 			);
 			name = Controllers;
@@ -174,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				CCA4D8C61C3F133800110DB1 /* SavingView.swift */,
-				CCD617C41C3EBD3000EE7ADC /* CreateCheckpointTableViewCell.swift */,
 				CCD617C91C3EC49D00EE7ADC /* CheckpointTableViewCell.swift */,
 			);
 			name = Views;
@@ -392,15 +400,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD617C81C3EBDB400EE7ADC /* CheckpointTableViewController.swift in Sources */,
 				CCD617CA1C3EC49D00EE7ADC /* CheckpointTableViewCell.swift in Sources */,
 				CCD617CD1C3EC6D200EE7ADC /* CheckpointColors.swift in Sources */,
+				CC0D96271C40B2510046621E /* LocationManager.swift in Sources */,
 				CCD0BB6A1C1F814A000730F1 /* AppDelegate.swift in Sources */,
 				CC0D96221C4077370046621E /* CheckpointViewController.swift in Sources */,
 				CC261DFA1C1F972800D22FA8 /* GoogleAPICalls.swift in Sources */,
 				CCA4D8C71C3F133800110DB1 /* SavingView.swift in Sources */,
 				CCD0BBA11C1F8773000730F1 /* GlobalConstants.swift in Sources */,
-				CCD617C51C3EBD3000EE7ADC /* CreateCheckpointTableViewCell.swift in Sources */,
+				CC0D96251C40B0AA0046621E /* Checkpoint.swift in Sources */,
 				CCD0BB721C1F814A000730F1 /* Checkpoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavingView" customModule="Checkpoint" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="etT-0x-06P"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SavingView" customModule="Checkpoint" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="437" height="297"/>
@@ -60,17 +64,11 @@
                 <constraint firstItem="9Cc-I6-ace" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fu3-Jg-S2a"/>
                 <constraint firstItem="M4d-gp-7Vt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="gzg-ms-t0P"/>
                 <constraint firstItem="7x3-zm-hcE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hOK-mB-r58"/>
-                <constraint firstAttribute="trailing" secondItem="iqi-pp-AYT" secondAttribute="trailing" id="q6z-Xs-ycZ"/>
                 <constraint firstItem="iqi-pp-AYT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qY9-fr-B3d"/>
                 <constraint firstItem="9Cc-I6-ace" firstAttribute="leading" secondItem="iqi-pp-AYT" secondAttribute="trailing" constant="5" id="ty7-RE-XB1"/>
                 <constraint firstItem="M4d-gp-7Vt" firstAttribute="leading" secondItem="z8w-lI-g5y" secondAttribute="trailing" constant="2" id="wNf-MY-VPg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="q6z-Xs-ycZ"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="arrowImage" destination="z8w-lI-g5y" id="KGg-f1-G98"/>
                 <outlet property="rightBar" destination="M4d-gp-7Vt" id="bsn-eU-5ca"/>
